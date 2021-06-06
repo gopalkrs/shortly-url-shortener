@@ -16,7 +16,7 @@ window.onload=()=>{
             body : formData
         }
 
-        fetch('http://shortly-tech.herokuapp.com/',options)
+        fetch('https://shortly-tech.herokuapp.com/',options)
         .then(response=>response.json())
         .then(data=>{
             inputVal.value=data.shortUrl;

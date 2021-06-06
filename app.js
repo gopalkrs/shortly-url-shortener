@@ -9,7 +9,7 @@ const users= {
 
 app.use(express.static('static'));
 app.use(express.urlencoded({extended:true}));
-app.use(express.json())
+app.use(express.json());
 app.get('/:shorturlId',(req,res)=>{
     const longUrl=users[req.params.shorturlId];
     if(longUrl) {
@@ -26,7 +26,7 @@ app.post('/',(req,res)=>{
     const shorturlId=shortid.generate();
 
     users[shorturlId]=longUrl;
-    res.send({shortUrl: `http://shortly-tech.herokuapp.com/${shorturlId}`});
+    res.send({shortUrl: `https://shortly-tech.herokuapp.com/${shorturlId}`});
 })
 
 
