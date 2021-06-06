@@ -13,7 +13,12 @@ app.use(express.json());
 app.get('/:shorturlId',(req,res)=>{
     const longUrl=users[req.params.shorturlId];
     if(longUrl) {
-        res.redirect(longUrl);
+        if(longUrl.indexOf('https://')!=0) {
+            res.redirect('https://' + longUrl);
+        }
+        else {
+            res.redirect(longUrl);
+        }
     }
     else {
         res.status('404').send("url does not exist");
