@@ -31,7 +31,7 @@ app.post('/',(req,res)=>{
     const shorturlId=shortid.generate();
 
     users[shorturlId]=longUrl;
-    res.send({shortUrl: `https://shortly-tech.herokuapp.com/${shorturlId}`});
+    res.send({shortUrl: `https://shortlyyy.onrender.com/${shorturlId}`});
 })
 
 
